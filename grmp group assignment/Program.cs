@@ -95,14 +95,19 @@ class CountrySide
         Wessig = new Village("Wessig", false);
         Maeland = new Village("Maeland", false);
         Helmholtz = new Village("helmholtz",true);
-        Maeland = new Village("Maeland", false);
-        // TO DO: Complete this section
-
+        Uster = new Village("Uster", false);
+      Badden= new Village("Badden", false);
+       
         Alst.VillageSetup(0, Schvenig, Wessig);
         Schvenig.VillageSetup(14, Maeland, Helmholtz);
-        // TO DO: Complete this section
+        Maeland.VillageSetup(9, null, Helmholtz);
+        Helmholtz .VillageSetup(28, null, null);
+        Wessig.VillageSetup(19, Uster, Badden);
+        Uster.VillageSetup(28,null, null);
+        Badden.VillageSetup(11,null, null);
 
-
+        this.TraverseVillages(Alst);
+        this.Announcement();
     }
 
     public void Announcement()
