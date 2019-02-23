@@ -72,7 +72,7 @@ class CountrySide
 
         // Here Hugi records his travels, as any Norse Hero will do:
         Hugi.HugiJournal.Add(new JournalEntry(CurrentVillage.VillageName, CurrentVillage.distanceFromPreviousVillage));
-
+        try { 
         Console.WriteLine("I am in {0}", CurrentVillage.VillageName);
 
         if (CurrentVillage.isAstrildgeHere)
@@ -83,10 +83,13 @@ class CountrySide
             Hugi.FoundAstrilde = true;
         }
 
-        // TO DO: Complete this section to make the Recursion work           
+        TraverseVillages(CurrentVillage.west);
+        TraverseVillages(CurrentVillage.east);
 
 
     }
+        catch (NullReferenceException) { }
+        }
 
     public void Run()
     {
